@@ -3,14 +3,20 @@ plugins {
 }
 
 group = 'com'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 repositories {
     mavenCentral()
+
+    maven {
+        url 'https://packages.confluent.io/maven/'
+    }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
+    implementation 'org.apache.kafka:kafka-clients:7.0.1-ccs'
+
+    testImplementation platform('org.junit:junit-bom:5.10.3')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
